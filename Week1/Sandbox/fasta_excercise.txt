@@ -1,0 +1,12 @@
+# count the number of lines in each peice of code
+echo '#1  find . -name '*.fasta' | xargs wc -l' > UnixPrac1.txt
+
+# print everything from the second line of E. coli genome
+echo '#2 tail -n+1 E.coli.fasta' >> UnixPrac1.txt
+
+# count the sequence length of this genome
+echo 'tail -n+1 E.coli.fasta | wc -c' >> UnixPrac1.txt
+
+# Count the matches of ATGC in E.coli
+echo 'grep 'ATGC' E.coli.fasta | wc -l' >> UnixPrac1.txt
+
