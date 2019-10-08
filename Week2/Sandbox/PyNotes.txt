@@ -1,0 +1,27 @@
+# Python Notes
+
+# Lists - contains compound data ID by [] brackets
+# Tuple - like lists but harder to modify ID by () brackets
+# Dictionary - {}
+# NumPy Arrays - fast efficient numerical computing
+
+# Indexing in Python starts at 0 not 1
+
+# Each object has methods associated with it. These modify the objects.
+MyList = ('blue')
+MyList.append('a new item')
+
+
+# If your elements/data are unordered and indexed by numbers use a list
+# If you're defining a constant set of values (or ordered sequences) and all you're ever going to do with them is iterate through them, use a tuple.
+# If you want to perform set operations on data, use a set
+# If they are unordered and indexed by keys (e.g., names), use a dictionary
+
+# Copying -----
+
+a = b # This gives a another tag - b. This doesnt actually copy any memory jsut assigns a new label
+a = b[:] # This does a shallow copy, doesnt go past the first nested list
+a = copy.deepcopy(a) # This is a deep copy and is recursive - copying everything
+
+# Strings -----
+
