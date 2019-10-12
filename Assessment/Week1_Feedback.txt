@@ -1,0 +1,400 @@
+Starting weekly assessment for Daniel, Week1
+
+Current Points = 100
+
+Note that: 
+(1) Major sections begin with a double "====" line 
+(2) Subsections begin with a single "====" line 
+(3) Code output or text file content are printed within single "*****" lines 
+
+======================================================================
+======================================================================
+Your Git repo size this week is about 1.50 MiB on disk 
+
+PART 1: Checking project workflow...
+
+Found the following directories in parent directory: Week1, Assessment, Week2, .git
+
+Found the following files in parent directory: CountLines.sh, .gitignore, README.md
+
+Checking for key files in parent directory...
+
+Found .gitignore in parent directory, great! 
+
+Printing contents of .gitignore:
+**********************************************************************
+# History files
+.Rhistory
+.Rapp.history
+
+# Session Data files
+.RData
+
+# User-specific files
+.Ruserdata
+
+# Example code in package build process
+*-Ex.R
+
+# Output files from R CMD build
+/*.tar.gz
+
+# Output files from R CMD check
+/*.Rcheck/
+
+# RStudio files
+.Rproj.user/
+
+# produced vignettes
+vignettes/*.html
+vignettes/*.pdf
+
+# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+.httr-oauth
+
+# knitr and R markdown default cache directories
+*_cache/
+/cache/
+
+# Temporary files created by R markdown
+*.utf8.md
+*.knit.md
+**********************************************************************
+
+Found README in parent directory, named: README.md
+
+Printing contents of README.md:
+**********************************************************************
+QMEECourseWork
+**********************************************************************
+
+======================================================================
+Looking for the weekly directories...
+
+Found 2 weekly directories: Week1, Week2
+
+The Week1 directory will be assessed 
+
+======================================================================
+======================================================================
+PART 2: Checking weekly code and workflow...
+
+======================================================================
+Assessing WEEK1...
+
+Found the following directories: Docs, Code, Data, Sandbox, Results
+
+Found the following files: 
+
+Checking for readme file in weekly directory...
+
+README file missing, 1 pt deducted
+
+Current Points = 99
+
+Found following files in results directory: ...
+
+Found 7 code files: ConcatenateTwoFiles.sh, variables.sh, CompileLaTeX.sh, tiff2png.sh, MyExampleScript.sh, tabtocsv.sh, boilerplate.sh
+
+======================================================================
+Testing script/code files...
+
+======================================================================
+Inspecting script file ConcatenateTwoFiles.sh...
+
+File contents are:
+**********************************************************************
+#!/bin/bash
+# Author: d.smith3@pgr.reading.ac.uk
+# Script: ConcatenteTwoFiles.sh
+# Desc: Merge Files
+# Arguments: $1 $2 $3
+# Date: Oct 2019
+
+cat $1 > $3
+cat $2 >> $3
+echo "Merged files is"
+cat $3**********************************************************************
+
+Testing ConcatenateTwoFiles.sh...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+Merged files is
+
+**********************************************************************
+
+Encountered error (or warning):
+ConcatenateTwoFiles.sh: line 8: $3: ambiguous redirect
+ConcatenateTwoFiles.sh: line 9: $3: ambiguous redirect
+
+======================================================================
+Inspecting script file variables.sh...
+
+File contents are:
+**********************************************************************
+#!/bin/bash
+
+# Author: d.smith3@pgr.reading.ac.uk
+# Script: variables.sh
+# Desc: Varibale demonstrations
+# Arguments: $MyVar $a $b $mysum
+# Date: Oct 2019
+
+# Show how variables are used
+MyVar='a string'
+echo 'the current value of the string is' $MyVar
+echo 'Please eneter a new string'
+read MyVar 
+echo 'This is what the current variable is ...' $MyVar
+
+# Reading multiple variables
+echo 'Enter the two numbers sepereated by space(s)'
+read a b
+echo 'You entered' $a 'and' $b '. Their sum is:'
+mysum=`expr $a + $b`
+echo $mysum**********************************************************************
+
+Testing variables.sh...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+the current value of the string is a string
+Please eneter a new string
+This is what the current variable is ...
+Enter the two numbers sepereated by space(s)
+You entered and . Their sum is:
+
+
+**********************************************************************
+
+Encountered error (or warning):
+expr: syntax error
+
+======================================================================
+Inspecting script file CompileLaTeX.sh...
+
+File contents are:
+**********************************************************************
+#!/bin/bash
+pdflatex $1.tex
+pdflatex $1.tex
+bibtex $1
+pdflatex $1.tex
+pdflatex $1.tex
+evince $1.pdf &
+
+## Cleanup
+rm *~
+rm *.aux
+rm *.dvi
+rm *.log
+rm *.nav
+rm *.out
+rm *.snm
+rm *.toc**********************************************************************
+
+Testing CompileLaTeX.sh...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(/usr/share/texlive/texmf-dist/tex/latex/tools/.tex
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+File ignored)
+*
+! Emergency stop.
+<*> .tex
+        
+!  ==> Fatal error occurred, no output PDF file produced!
+Transcript written on .log.
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (pre
+**********************************************************************
+
+Encountered error (or warning):
+bibtex: Need exactly one file argument.
+Try `bibtex --help' for more information.
+rm: cannot remove '*~': No such file or directory
+rm: cannot remove '*.aux': No such file or directory
+rm: cannot remove '*.dvi': No such file or directory
+rm: cannot remove '*.log': No such file or directory
+rm: cannot remove '*.nav': No such file or directory
+rm: cannot remove '*.out': No such file or directory
+rm: cannot remove '*.snm': No such file or directory
+rm: cannot remove '*.toc': No such file or directory
+
+** (evince:11391): WARNING **: Error when getting information for file '/home/mhasoba/Documents/Teaching/IC_CMEE/2019-20/Coursework/StudentRepos/DanielSmith_NA/Week1/Code/.pdf': No such file or directory
+
+** (evince:11391): WARNING **: Error setting file metadata: No such file or directory
+
+** (evince:11391): WARNING **: Error setting file metadata: No such file or directory
+
+** (evince:11391): WARNING **: Error setting file metadata: No such file or directory
+
+** (evince:11391): WARNING **: Error setting file metadata: No such file or directory
+
+** (evince:11391): WARNING **: Error setting file metadata: No such file or directory
+
+** (evince:11391): WARNING **: Error setting file metadata: No such file or directory
+
+** (evince:11391): WARNING **: Error setting file metadata: No such file or directory
+
+** (evince:11391): WARNING **: Error setting file metadata: No such file or directory
+
+** (evince:11391): WARNING **: Error setting file metadata: No such file or directory
+
+** (evince:11391): WARNING **: Error setting file metadata: No such file or directory
+
+** (evince:11391): WARNING **: Error setting file metadata: No such file or directory
+
+======================================================================
+Inspecting script file tiff2png.sh...
+
+File contents are:
+**********************************************************************
+#!/bin/bash
+
+#!/bin/bash
+# Author: d.smith3@pgr.reading.ac.uk
+# Script: tiff2png
+# Desc: Convert tiff images to png
+# Arguments: $f
+# Date: Oct 2019
+
+for f in *.tif
+    do 
+        echo "Converting $f";
+        convert "$f" "$(basename "$f" .tif).png";
+    done**********************************************************************
+
+Testing tiff2png.sh...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+Converting *.tif
+
+**********************************************************************
+
+Encountered error (or warning):
+convert: unable to open image `*.tif': No such file or directory @ error/blob.c/OpenBlob/2712.
+convert: no images defined `*.png' @ error/convert.c/ConvertImageCommand/3210.
+
+======================================================================
+Inspecting script file MyExampleScript.sh...
+
+File contents are:
+**********************************************************************
+#!/bin/bash
+# Author: d.smith3@pgr.reading.ac.uk
+# Script: MyExampleScript.sh
+# Desc: Say hello to the user
+# Arguments: $USER
+# Date: Oct 2019
+
+msg1='Hello'
+msg2=$USER
+echo '$msg1 $msg2'
+echo 'Hello $USER'
+echo**********************************************************************
+
+Testing MyExampleScript.sh...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+$msg1 $msg2
+Hello $USER
+
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.00377s
+
+======================================================================
+Inspecting script file tabtocsv.sh...
+
+File contents are:
+**********************************************************************
+#!/bin/bash
+# Author: d.smith3@pgr.reading.ac.uk
+# Script: tabtocsv.sh
+# Desc: Substitute tabs to commas for deliminated files and saves to a csv file
+# Arguments: 1 -> tab deliminated file
+# Date: Oct 2019
+
+echo "Creating a comma deliminated version of $1 ..."
+cat $1 | tr -s "\t" "," >> $1.csv
+echo "Done!"
+
+exit**********************************************************************
+
+Testing tabtocsv.sh...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+Creating a comma deliminated version of  ...
+Done!
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.00456s
+
+======================================================================
+Inspecting script file boilerplate.sh...
+
+File contents are:
+**********************************************************************
+#!/bin/bash
+# Author: d.smith3@pgr.reading.ac.uk
+# Script: boilerplate.sh
+# Desc: simple boilerplate for shell scripts
+# Arguments: none
+# Date: Oct 2019
+
+echo -e "\nThis is a shell script!\n" #what does -e do?
+
+# exit
+
+**********************************************************************
+
+Testing boilerplate.sh...
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+This is a shell script!
+
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.00434s
+
+======================================================================
+======================================================================
+Finished running scripts
+
+Ran into 4 errors
+
+======================================================================
+======================================================================
+
+FINISHED WEEKLY ASSESSMENT
+
+Current Points for the Week = 99
+
+NOTE THAT THESE ARE POINTS, NOT MARKS FOR THE WEEK!
